@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/fizzbuzz.js" defer></script>
+</head>
+<body>
+    <div class="header-cont">
+        <header><h1>FizzBuzz</h1></header>
+    </div>
+
+    <main>
+        <div id="app">
+            
+            <div class="input-cont">                
+                <label for="min-value">Min number:</label>
+                <input type="number" name="min-value" id="min-value" min="1" max="99" value="1">
+                <label for="max-value">Max number:</label>
+                <input type="number" name="max-value" id="max-value" min="2" max="100" value="100">
+                <label for="fizz-value">Fizz Value:</label>
+                <input type="number" name="fizz-value" id="fizz-value" value="3">
+                <label for="buzz-value">Buzz Value:</label>
+                <input type="number" name="buzz-value" id="buzz-value" value="5">
+                <button type="button" id="submitBtn" onclick="addListeners()">Submit</button>
+                <button type="button" id="resetBtn" onclick="addListeners()">Reset</button>                
+            </div>
+
+            <div class="output-cont"></div>
+
+        </div>
+        <footer>C 2020</footer>
+    </main>
+
+
+    
+    
+</body>
+</html>
