@@ -3,32 +3,55 @@ var subBtn = document.getElementById("submitBtn");
 var resBtn = document.getElementById("resetBtn");
 
 
+
+
+
 function onSubmmit() {
-     var minInp  = document.querySelector("#min-value").value;
-     var maxInp = document.querySelector("#max-value").value;
-     var fizzInp = document.querySelector("#fizz-value").value;
-     var buzzInp = document.querySelector("#buzz-value").value;
+     var minInp  = document.getElementById("min-value").value;
+     var maxInp = document.getElementById("max-value").value;
+     var fizzInp = document.getElementById("fizz-value").value;
+     var buzzInp = document.getElementById("buzz-value").value;
 
      console.log(minInp, maxInp, fizzInp ,buzzInp)
      
-     for(let i = minInp; i <= maxInp; i++) {
+     for(let i = minInp; i <= maxInp -1; i++) {
           if (i % fizzInp === 0 && i % buzzInp === 0) {
-               console.log(i+"fb")          
+
+               var fbDiv = document.createElement("div");
+               outCont.appendChild(fbDiv);           
+               var fbTxt = document.createTextNode(i + " = FizzBuzz!");
+               fbDiv.classList.add("fb-div-box");
+               fbDiv.id = `divId${i}`;
+               fbDiv.appendChild(fbTxt);               
+
           } else if (i % fizzInp === 0) {
-               console.log(i+"f")
+
+               var fDiv = document.createElement("div");
+               outCont.appendChild(fDiv);
+               var fTxt = document.createTextNode(i + " = Fizz!");
+               fDiv.classList.add("f-div-box");
+               fDiv.id = `divId${i}`;
+               fDiv.appendChild(fTxt);
+
           } else if (i % buzzInp === 0) {
-               console.log(i+"b")  
+               
+               var bDiv = document.createElement("div");
+               outCont.appendChild(bDiv);
+               var bTxt = document.createTextNode(i + " = Buzz!");
+               bDiv.classList.add("b-div-box");
+               bDiv.id = `divId${i}`;
+               bDiv.appendChild(bTxt);
+               
           } else {
-               console.log(i)          
+               var nDiv = document.createElement("div"); 
+               outCont.appendChild(nDiv);
+               var nTxt = document.createTextNode(i);
+               nDiv.classList.add("n-div-box");
+               nDiv.id = `divId${i}`;
+               nDiv.appendChild(nTxt);               
+                
           }
-    }
-     
-     
-
-
-     
-
-     
+    }     
 }
 
 
@@ -50,45 +73,3 @@ function main() {
 }
 
 main();
-
-
-/*var 
-const gameCheck = (start, end, fizz, buzz) => {
-
-     
-
-     for(var i = start; i <= end; i++) {
-          if ( i % fizz === 0 && i % buzz === 0) {
-               var fbDiv = document.createElement("div"); 
-               var fbTxt = document.createTextNode(i + " :FizzBuzz! ");
-               fbDiv.classList.add("div-box");
-               fbDiv.id = `divId${i}`;
-               fbDiv.appendChild(fbTxt);
-               document.body.appendChild(fbDiv);               
-          } else if ( i % fizz === 0) {
-               var fDiv = document.createElement("div"); 
-               var fTxt = document.createTextNode(i + " :Fizz! ");
-               fDiv.classList.add("div-box");
-               fDiv.id = `divId${i}`;
-               fDiv.appendChild(fTxt);
-               document.body.appendChild(fDiv);               
-          } else if ( i % buzz === 0) {
-               var bDiv = document.createElement("div"); 
-               var bTxt = document.createTextNode(i + " :Buzz! ");
-               bDiv.classList.add("div-box");
-               bDiv.id = `divId${i}`;
-               bDiv.appendChild(bTxt);
-               document.body.appendChild(bDiv);               
-          } else {
-               var nDiv = document.createElement("div"); 
-               var nTxt = document.createTextNode(i + " :Number! ");
-               nDiv.classList.add("div-box");
-               nDiv.id = `divId${i}`;
-               nDiv.appendChild(nTxt);
-               document.body.appendChild(nDiv);               
-          
-          }
-    }
-}
-
-*/
