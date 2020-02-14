@@ -34,7 +34,7 @@ body {
     font-size: 30px;
     font-weight: bold;  
     grid-gap: 6px;    
-    border-top: 4px double gray
+    border-top: 4px double gray;
 }
 
 .fb-div-box, .f-div-box, .b-div-box, .n-div-box {

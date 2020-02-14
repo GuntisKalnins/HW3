@@ -11,7 +11,7 @@ function onSubmmit() {
 
      console.log(minInp, maxInp, fizzInp ,buzzInp)
      
-     for(let i = minInp; i <= maxInp-1; i++) {
+     for(let i = minInp; i <= maxInp; i++) {
           if (i % fizzInp === 0 && i % buzzInp === 0) {
 
                var fbDiv = document.createElement("div");
