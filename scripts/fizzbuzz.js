@@ -2,11 +2,8 @@ var outCont = document.querySelector(".output-cont");
 var subBtn = document.getElementById("submitBtn");
 var resBtn = document.getElementById("resetBtn");
 
-
-
-
-
 function onSubmmit() {
+     onReset()
      var minInp  = document.getElementById("min-value").value;
      var maxInp = document.getElementById("max-value").value;
      var fizzInp = document.getElementById("fizz-value").value;
@@ -14,7 +11,7 @@ function onSubmmit() {
 
      console.log(minInp, maxInp, fizzInp ,buzzInp)
      
-     for(let i = minInp; i <= maxInp -1; i++) {
+     for(let i = minInp; i <= maxInp-1; i++) {
           if (i % fizzInp === 0 && i % buzzInp === 0) {
 
                var fbDiv = document.createElement("div");
@@ -43,6 +40,7 @@ function onSubmmit() {
                bDiv.appendChild(bTxt);
                
           } else {
+
                var nDiv = document.createElement("div"); 
                outCont.appendChild(nDiv);
                var nTxt = document.createTextNode(i);
