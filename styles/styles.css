@@ -64,6 +64,8 @@ span {
     font-size: 30px;
     font-weight: bold;  
     grid-gap: 6px;    
+    margin-top: 15px;
+    padding-top: 20px;
 }
 
 .fb-div-box, .f-div-box, .b-div-box, .n-div-box {
@@ -113,7 +115,7 @@ button {
 button:hover {
     transition: 0.2s;
     background-color: red;
-    padding: 7px;
+    padding: 6px;
     color: white;
 }
 
