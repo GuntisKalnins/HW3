@@ -4,10 +4,10 @@ var resBtn = document.getElementById("resetBtn");
 
 function onSubmmit() {
      onReset()
-     var minInp  = document.getElementById("min-value").value;
-     var maxInp = document.getElementById("max-value").value;
-     var fizzInp = document.getElementById("fizz-value").value;
-     var buzzInp = document.getElementById("buzz-value").value;
+     var minInp  = parseInt(document.getElementById("min-value").value);
+     var maxInp = parseInt(document.getElementById("max-value").value);
+     var fizzInp = parseInt(document.getElementById("fizz-value").value);
+     var buzzInp = parseInt(document.getElementById("buzz-value").value);
 
      console.log(minInp, maxInp, fizzInp ,buzzInp)
      
@@ -49,13 +49,13 @@ function onSubmmit() {
                nDiv.appendChild(nTxt);               
                 
           }
-    }     
+     }     
 }
 
 
 function onReset() {
      while (outCont.firstChild) {
-         outCont.removeChild(outCont.firstChild)
+         outCont.removeChild(outCont.firstChild);
      }
 }
 
