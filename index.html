@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="header-cont">
-        <header><h1>The Fizz Buzz</h1></header>
+        <header><h1><span class="span1">The</span><span class="span2">Fizz</span><span class="span3">Buzz</span></h1></header>
     </div>
 
     <main>
@@ -26,8 +26,10 @@
                     <label for="buzz-value">Buzz :</label>
                     <input type="number" name="buzz-value" id="buzz-value" value="5">
                 </div>  
-                <button type="button" id="submitBtn" onclick="addListeners()">Submit</button>
-                <button type="button" id="resetBtn" onclick="addListeners()">Reset</button>                
+                <button type="button" id="submitBtn" onclick="addListeners()">Generate</button>
+                <button type="button" id="resetBtn" onclick="addListeners()">Reset</button>       
+                <button type="button" id="defBtn" onclick="addListeners()">Reset values</button>   
+                <button type="button" id="bigRes" onclick="addListeners()">Reset EVERYTHING!</button>      
             </div>
 
             <div class="output-cont">

@@ -1,49 +1,55 @@
-var outCont = document.querySelector(".output-cont");
-var subBtn = document.getElementById("submitBtn");
-var resBtn = document.getElementById("resetBtn");
+const outCont = document.querySelector(".output-cont");
+const subBtn = document.getElementById("submitBtn");
+const resBtn = document.getElementById("resetBtn");
 
 function onSubmmit() {
      onReset()
-     var minInp  = parseInt(document.getElementById("min-value").value);
-     var maxInp = parseInt(document.getElementById("max-value").value);
-     var fizzInp = parseInt(document.getElementById("fizz-value").value);
-     var buzzInp = parseInt(document.getElementById("buzz-value").value);
+     let minInp  = parseInt(document.getElementById("min-value").value);
+     let maxInp = parseInt(document.getElementById("max-value").value);
+     let fizzInp = parseInt(document.getElementById("fizz-value").value);
+     let buzzInp = parseInt(document.getElementById("buzz-value").value);    
+    
+     if (minInp <= 0 || minInp > 99 || maxInp <= 0 || maxInp > 100 ||fizzInp <= 0 || fizzInp > 100 || buzzInp <= 0 || buzzInp > 100) {
+          return window.alert("Invalid input value. Please try again!");
+     } else {
+          gameEngine(minInp, maxInp, fizzInp, buzzInp);
+     }        
+}
 
-     console.log(minInp, maxInp, fizzInp ,buzzInp)
-     
-     for(let i = minInp; i <= maxInp; i++) {
+function gameEngine (minInp, maxInp, fizzInp, buzzInp) {
+     for (let i = minInp; i <= maxInp; i++) {
           if (i % fizzInp === 0 && i % buzzInp === 0) {
 
-               var fbDiv = document.createElement("div");
+               let fbDiv = document.createElement("div");
                outCont.appendChild(fbDiv);           
-               var fbTxt = document.createTextNode(i + " = FizzBuzz!");
+               let fbTxt = document.createTextNode(i + " = FizzBuzz!");
                fbDiv.classList.add("fb-div-box");
                fbDiv.id = `divId${i}`;
                fbDiv.appendChild(fbTxt);               
 
           } else if (i % fizzInp === 0) {
 
-               var fDiv = document.createElement("div");
+               let fDiv = document.createElement("div");
                outCont.appendChild(fDiv);
-               var fTxt = document.createTextNode(i + " = Fizz!");
+               let fTxt = document.createTextNode(i + " = Fizz!");
                fDiv.classList.add("f-div-box");
                fDiv.id = `divId${i}`;
                fDiv.appendChild(fTxt);
 
           } else if (i % buzzInp === 0) {
                
-               var bDiv = document.createElement("div");
+               let bDiv = document.createElement("div");
                outCont.appendChild(bDiv);
-               var bTxt = document.createTextNode(i + " = Buzz!");
+               let bTxt = document.createTextNode(i + " = Buzz!");
                bDiv.classList.add("b-div-box");
                bDiv.id = `divId${i}`;
                bDiv.appendChild(bTxt);
                
           } else {
 
-               var nDiv = document.createElement("div"); 
+               let nDiv = document.createElement("div"); 
                outCont.appendChild(nDiv);
-               var nTxt = document.createTextNode(i);
+               let nTxt = document.createTextNode(i);
                nDiv.classList.add("n-div-box");
                nDiv.id = `divId${i}`;
                nDiv.appendChild(nTxt);               
@@ -52,19 +58,34 @@ function onSubmmit() {
      }     
 }
 
-
 function onReset() {
      while (outCont.firstChild) {
          outCont.removeChild(outCont.firstChild);
      }
 }
 
+function defVal() {
+     let minInp  = document.getElementById("min-value");
+     let maxInp = document.getElementById("max-value");
+     let fizzInp = document.getElementById("fizz-value");
+     let buzzInp = document.getElementById("buzz-value");   
+     minInp.value = 1;
+     maxInp.value = 100;
+     fizzInp.value = 3;
+     buzzInp.value = 5;
+}
+
+function resetAll() {
+     onReset();
+     defVal();
+}
+
 function addListeners() {
      subBtn.addEventListener("click", onSubmmit);
      resBtn.addEventListener("click", onReset);
+     defBtn.addEventListener("click", defVal);
+     bigRes.addEventListener("click", resetAll);
 }
-
-
 
 function main() {
      addListeners()     
